@@ -381,7 +381,17 @@
             padding: 80px 5%;
         }
 
-        .project-grid, .organization-grid {
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .organization-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
@@ -428,6 +438,10 @@
             width: 100%;
             padding-bottom: 75%;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
         }
 
         .project-card img, .organization-card img {
@@ -1039,7 +1053,7 @@
                 <ul>
                     <li>Figma (Wireframing, Mockup, Prototyping)</li>
                     <li>Administrasi, Dokumentasi, & Pengelolaan Arsip Digital</li>
-                    <li>HTML, CSS, JavaScript, PHP, MySQL</li>
+                    <li>HTML, CSS, JavaScript, PHP, MySQL)</li>
                     <li>Canva & CorelDRAW</li>
                     <li>Microsoft Office (Word, Excel, PowerPoint)</li>
                     <li>Analisis Kebutuhan Sistem (System Requirements)</li>
@@ -1139,6 +1153,19 @@
                 <div class="project-info">
                     <h3>Desain Prototipe Aplikasi Travel Online</h3>
                     <p>Mendesain prototipe aplikasi travel online dengan fokus pada pengalaman pengguna (UX) yang mulus dan antarmuka (UI) yang menarik, mencakup fitur pencarian, pemesanan, dan manajemen perjalanan. Membuat wireframe, mockup, dan prototipe interaktif menggunakan Figma.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image-container">                   <img src="images/yoan.jpg" alt="Slot Kosong">
+                    <div class="image-overlay">
+                        <span>+</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Identitas Visual Yoan Griya Batik</h3>
+                    <p>Yoan Griya Batik merupakan brand fashion yang menonjolkan kemewahan batik dalam konsep visual modern. Logo dirancang dengan huruf "y" sebagai simbol ketangguhan, serta motif bunga yang melambangkan keindahan, kebahagiaan, dan
+                        kemurnian. Warna coklat dipilih untuk menciptakan kesan hangat, nyaman, dan elegan saat berbelanja.
+                        Desain ini mencakup logo utama, kemasan (paper bag), kartu nama, dan poster promosi, semuanya dikemas dalam identitas visual yang konsisten, profesional, dan berkelas.</p>
                 </div>
             </div>
         </div>
@@ -1342,7 +1369,7 @@
             <a href="https://www.linkedin.com/in/siti-noor-shaliha-9370302a7" target="_blank" title="Kunjungi Profil LinkedIn Saya">
                 <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn">
             </a>
-            <a href="https://www.instagram.com/shaaliha7?igsh=MTlzZDZpbDdwd3M4eg%3D%3D&utm_source=qr" target="_blank" title="Kunjungi Profil Instagram Saya">
+            <a href="https://www.instagram.com/shaaliha7?igsh=MTlzZDZibDdwd3M4eg%3D%3D&utm_source=qr" target="_blank" title="Kirim Pesan WhatsApp">
                 <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram">
             </a>
             <a href="https://wa.me/6282272606909" target="_blank" title="Kirim Pesan WhatsApp">
