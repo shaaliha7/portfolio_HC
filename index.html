@@ -589,13 +589,13 @@
             color: #555;
         }
 
-        #certifications {
+        #certifications, #achievements { /* Added #achievements here */
             background-color: #e6f7ff;
             padding: 80px 5%;
             text-align: center;
         }
 
-        .cert-grid {
+        .cert-grid, .achievement-grid { /* Added .achievement-grid here */
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
@@ -605,7 +605,7 @@
             margin-right: auto;
         }
 
-        .cert-card {
+        .cert-card, .achievement-card { /* Added .achievement-card here */
             background-color: #fff;
             border-radius: 15px;
             padding: 25px;
@@ -620,12 +620,12 @@
             align-items: center;
         }
 
-        .cert-card:hover {
+        .cert-card:hover, .achievement-card:hover { /* Added .achievement-card:hover here */
             transform: translateY(-8px);
             box-shadow: 0 12px 35px rgba(0,0,0,0.15);
         }
 
-        .cert-image-container {
+        .cert-image-container, .achievement-image-container { /* Added .achievement-image-container here */
             width: 100%;
             max-width: 300px;
             height: auto;
@@ -636,7 +636,7 @@
             position: relative;
         }
 
-        .cert-image-container img {
+        .cert-image-container img, .achievement-image-container img { /* Added .achievement-image-container img here */
             width: 100%;
             height: auto;
             display: block;
@@ -645,30 +645,30 @@
             transition: transform 0.3s ease;
         }
 
-        .cert-image-container img:hover {
+        .cert-image-container img:hover, .achievement-image-container img:hover { /* Added .achievement-image-container img:hover here */
             transform: scale(1.05);
         }
 
-        .cert-card h3 {
+        .cert-card h3, .achievement-card h3 { /* Added .achievement-card h3 here */
             color: var(--primary-color);
             margin-top: 0;
             margin-bottom: 3px;
             font-size: 1.4em;
         }
 
-        .cert-card p.issuer {
+        .cert-card p.issuer, .achievement-card p.issuer { /* Added .achievement-card p.issuer here */
             font-weight: 600;
             color: var(--text-dark);
             margin-bottom: 5px;
         }
 
-        .cert-card p.date {
+        .cert-card p.date, .achievement-card p.date { /* Added .achievement-card p.date here */
             font-size: 0.9em;
             color: #888;
             margin-bottom: 10px;
         }
 
-        .cert-card p.description {
+        .cert-card p.description, .achievement-card p.description { /* Added .achievement-card p.description here */
             font-size: 0.95em;
             color: #555;
             margin-bottom: 0;
@@ -685,6 +685,19 @@
             transform: rotate(-15deg);
             z-index: 0;
         }
+        /* Optional: Add a different icon for achievement card */
+        .achievement-card::before {
+            content: '🏆'; /* Trophy emoji */
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            color: var(--accent-color);
+            opacity: 0.3;
+            transform: rotate(-15deg);
+            z-index: 0;
+        }
+
 
         #contact {
             background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
@@ -801,7 +814,9 @@
         }
 
         .project-card:hover .image-overlay,
-        .organization-card:hover .image-overlay {
+        .organization-card:hover .image-overlay,
+        .cert-card:hover .image-overlay, /* Added for cert cards */
+        .achievement-card:hover .image-overlay { /* Added for achievement cards */
             opacity: 1;
         }
 
@@ -928,7 +943,7 @@
                 width: 100%;
             }
 
-            .project-grid, .organization-grid {
+            .project-grid, .organization-grid, .cert-grid, .achievement-grid { /* Added cert-grid and achievement-grid here */
                 grid-template-columns: 1fr;
             }
             
@@ -973,7 +988,7 @@
                 left: 20px;
             }
 
-            .cert-image-container {
+            .cert-image-container, .achievement-image-container { /* Added achievement-image-container here */
                 max-width: none;
             }
 
@@ -1014,9 +1029,8 @@
 
         <div class="nav-links">
             <a href="#hero">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#education">Education</a>
-            <a href="#projects">Projects</a>
+            <a href="#about">About Me</a> <a href="#education">Education</a>
+            <a href="#achievements">Achievements</a> <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
             <a href="#organization">Organizations</a>
             <a href="#relawan">Volunteer</a>
@@ -1085,6 +1099,7 @@
                     <p class="company">S1 Information Systems | GPA: 3.78/4.00</p>
                     <p class="duration">Oct 2023 – Present</p>
                     <ul>
+                        <li>Pilmapres 2025 Representative – System Analysis for Digital Optimization </li>
                         <li>Designed 2 application prototypes (Travel & E-commerce) from needs analysis to UI/UX design.</li>
                         <li>Developed web applications using HTML, CSS, JS, PHP, and MySQL.</li>
                         <li>Managed 180 lecturer journals through the OJS system (editing, metadata, and submission).</li>
@@ -1104,6 +1119,24 @@
                     </ul>
                 </div>
                 <div class="timeline-item-marker"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h2 class="section-title">Achievements</h2>
+        <div class="achievement-grid">
+            <div class="achievement-card">
+                <div class="achievement-image-container">
+                    <img src="images/PILMAPRES.JPG" alt="Achievement PILMAPRES 2024">
+                    <div class="image-overlay">
+                        <span>+</span>
+                    </div>
+                </div>
+                <h3>PILMAPRES 2025 Representative – System Analysis for Digital Optimization</h3>
+                <p class="issuer"><strong>STMIK Triguna Dharma</strong></p>
+                <p class="date">July 2025</p>
+                <p class="description">Participated in the STMIK Triguna Dharma 2024 Outstanding Student Selection (PILMAPRES) program by presenting the creative idea 'System Analysis for Digital Optimization' as a PILMAPRES 2025 Representative.</p>
             </div>
         </div>
     </section>
@@ -1401,8 +1434,9 @@
             const projectOverlays = document.querySelectorAll('.project-image-container .image-overlay');
             const certOverlays = document.querySelectorAll('.cert-image-container .image-overlay');
             const organizationOverlays = document.querySelectorAll('.organization-image-container .image-overlay');
+            const achievementOverlays = document.querySelectorAll('.achievement-image-container .image-overlay'); 
             
-            const allOverlays = [...projectOverlays, ...certOverlays, ...organizationOverlays].filter(overlay => overlay !== null);
+            const allOverlays = [...projectOverlays, ...certOverlays, ...organizationOverlays, ...achievementOverlays].filter(overlay => overlay !== null);
 
             allOverlays.forEach(overlay => {
                 overlay.addEventListener('click', function() {
