@@ -402,19 +402,19 @@
         }
 
         .relawan-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             margin-top: 40px;
-            max-width: 100%;
+            max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
+            align-items: stretch;
             padding: 0 5%;
             box-sizing: border-box;
         }
 
         .relawan-grid .organization-card {
-            max-width: 380px;
             width: 100%;
         }
 
@@ -426,6 +426,8 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: left;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover, .organization-card:hover {
@@ -456,6 +458,10 @@
 
         .project-info, .organization-info {
             padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-info h3, .organization-info h3 {
@@ -589,13 +595,13 @@
             color: #555;
         }
 
-        #certifications, #achievements { /* Added #achievements here */
+        #certifications, #achievements {
             background-color: #e6f7ff;
             padding: 80px 5%;
             text-align: center;
         }
 
-        .cert-grid, .achievement-grid { /* Added .achievement-grid here */
+        .cert-grid, .achievement-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
@@ -605,7 +611,7 @@
             margin-right: auto;
         }
 
-        .cert-card, .achievement-card { /* Added .achievement-card here */
+        .cert-card, .achievement-card {
             background-color: #fff;
             border-radius: 15px;
             padding: 25px;
@@ -620,12 +626,12 @@
             align-items: center;
         }
 
-        .cert-card:hover, .achievement-card:hover { /* Added .achievement-card:hover here */
+        .cert-card:hover, .achievement-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 35px rgba(0,0,0,0.15);
         }
 
-        .cert-image-container, .achievement-image-container { /* Added .achievement-image-container here */
+        .cert-image-container, .achievement-image-container {
             width: 100%;
             max-width: 300px;
             height: auto;
@@ -636,7 +642,7 @@
             position: relative;
         }
 
-        .cert-image-container img, .achievement-image-container img { /* Added .achievement-image-container img here */
+        .cert-image-container img, .achievement-image-container img {
             width: 100%;
             height: auto;
             display: block;
@@ -645,30 +651,30 @@
             transition: transform 0.3s ease;
         }
 
-        .cert-image-container img:hover, .achievement-image-container img:hover { /* Added .achievement-image-container img:hover here */
+        .cert-image-container img:hover, .achievement-image-container img:hover {
             transform: scale(1.05);
         }
 
-        .cert-card h3, .achievement-card h3 { /* Added .achievement-card h3 here */
+        .cert-card h3, .achievement-card h3 {
             color: var(--primary-color);
             margin-top: 0;
             margin-bottom: 3px;
             font-size: 1.4em;
         }
 
-        .cert-card p.issuer, .achievement-card p.issuer { /* Added .achievement-card p.issuer here */
+        .cert-card p.issuer, .achievement-card p.issuer {
             font-weight: 600;
             color: var(--text-dark);
             margin-bottom: 5px;
         }
 
-        .cert-card p.date, .achievement-card p.date { /* Added .achievement-card p.date here */
+        .cert-card p.date, .achievement-card p.date {
             font-size: 0.9em;
             color: #888;
             margin-bottom: 10px;
         }
 
-        .cert-card p.description, .achievement-card p.description { /* Added .achievement-card p.description here */
+        .cert-card p.description, .achievement-card p.description {
             font-size: 0.95em;
             color: #555;
             margin-bottom: 0;
@@ -685,9 +691,8 @@
             transform: rotate(-15deg);
             z-index: 0;
         }
-        /* Optional: Add a different icon for achievement card */
         .achievement-card::before {
-            content: '🏆'; /* Trophy emoji */
+            content: '🏆';
             position: absolute;
             top: 15px;
             right: 20px;
@@ -815,8 +820,8 @@
 
         .project-card:hover .image-overlay,
         .organization-card:hover .image-overlay,
-        .cert-card:hover .image-overlay, /* Added for cert cards */
-        .achievement-card:hover .image-overlay { /* Added for achievement cards */
+        .cert-card:hover .image-overlay,
+        .achievement-card:hover .image-overlay {
             opacity: 1;
         }
 
@@ -943,7 +948,7 @@
                 width: 100%;
             }
 
-            .project-grid, .organization-grid, .cert-grid, .achievement-grid { /* Added cert-grid and achievement-grid here */
+            .project-grid, .organization-grid, .cert-grid, .achievement-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -988,7 +993,7 @@
                 left: 20px;
             }
 
-            .cert-image-container, .achievement-image-container { /* Added achievement-image-container here */
+            .cert-image-container, .achievement-image-container {
                 max-width: none;
             }
 
@@ -1346,6 +1351,19 @@
                 <h3>KIP-Kuliah 2025 Volunteer</h3>
                 <p><strong>Education Volunteer at Rumah Tahfidz Al Fazz</strong></p>
                 <p>Served as a volunteer for the KIP-Kuliah 2025 program, providing guidance and assistance to prospective students in the registration process, completing requirements, and understanding information related to scholarships for higher education.</p>
+            </div>
+        </div>
+        <div class="organization-card">
+            <div class="organization-image-container">
+                <img src="images/PM.JPG" alt="Pengabdian Masyarakat Kuta Tualah">
+                <div class="image-overlay">
+                    <span>+</span>
+                </div>
+            </div>
+            <div class="organization-info">
+                <h3>Pengabdian Masyarakat (Community Service)</h3>
+                <p><strong>Desa Kuta Tualah, Kab. Deli Serdang</strong></p>
+                <p>Provided assistance and guidance for the rebranding of home-based tofu products in Kuta Tualah Village, Deli Serdang Regency. This involved innovating packaging design and optimizing social media presence to enhance product visibility and market reach.</p>
             </div>
         </div>
     </div>
